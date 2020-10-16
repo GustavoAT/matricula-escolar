@@ -15,6 +15,7 @@ class Grade extends Model
         'name',
         'description',
         'nvacancy',
+        'photo',
     ];
 
     /**

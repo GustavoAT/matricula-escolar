@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'presentation');
+
 Route::view('/login', 'userpage');
+
 Route::view('/perfildodesenvolvedor', 'devprofile');
-Route::get('/cadastro', function() {
-    return view('graderegister');
-});
+
+Route::resource('classes', GradesController::class)->only([
+    'index', 'create', 'store'
+])->names([
+    'create' => "classes.cadastrar"
+]);
+
+Route::resource('students', StudentController::class)->only([
+    'create', 'store'
+])->names([
+    'create' => "matricula"
+]);

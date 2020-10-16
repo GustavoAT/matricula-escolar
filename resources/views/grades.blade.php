@@ -16,7 +16,7 @@
     @forelse($grades as $grade)
     <div class="col-sm-6 col-md-4 col-xl-3">
         <div class="card">
-            <img src="..." class="card-img-top" style="height: 150px;">
+            <img src="{{$grade->photo}}" class="card-img-top" style="maxheight: 150px;width: 100%;">
             <div class="card-body">
                 <h5 class="card-title">{{$grade->name}}</h5>
                 <p class="card-text">{{$cgrade->description}}</p>

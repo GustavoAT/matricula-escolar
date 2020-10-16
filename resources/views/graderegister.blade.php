@@ -11,7 +11,13 @@
 @section('content')
 <section class="px-3 pt-2">
     <h2>Cadastrar classe</h2>
-    <form method="POST">
+
+    @isset($message)
+    <p>{{ $message }}</p>
+    @endisset
+
+    @empty($message)
+    <form action="/classes" method="POST">
         @csrf
         <div class="form-group row">
             <label for="gradename" class="col-sm-2 col-form-label">Nome</label>
@@ -30,9 +36,16 @@
             <div class="col-sm-3">
                 <input type="number" name="vacancy" class="form-control" id="nvacancy" min="0" required>
             </div>
-
+        </div>
+        <div class="form-group row">
+            <label for="gradephoto" class="col-sm-2 col-form-label">Link da foto</label>
+            <div class="col-sm-3">
+                <input type="text" name="photo" class="form-control" id="gradephoto" required>
+            </div>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
     </form>
+    @endempty
+
 </section>
 @endsection

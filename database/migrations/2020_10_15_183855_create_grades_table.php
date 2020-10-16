@@ -18,6 +18,7 @@ class CreateGradesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('nvacancy');
+            $table->string('photo');
             $table->timestamps();
         });
     }

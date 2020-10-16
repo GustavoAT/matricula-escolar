@@ -13,7 +13,13 @@
 @section('content')
 <section class="px-3 py-2">
     <h2>Matrícula</h2>
-    <form method="POST">
+
+    @isset($message)
+    <p>{{ $message }}</p>    
+    @endisset
+
+    @empty($message)
+    <form action="/students/store" method="POST">
         @csrf
         <div class="form-group row">
             <label for="studentname" class="col-sm-2 col-form-label">Nome completo</label>
@@ -38,11 +44,11 @@
             <div class="col-sm-3">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="studentgender1" value="M" required>
-                    <label class="form-check-label" for="studentgender1">M</label>
+                    <label class="form-check-label" for="studentgender1">Masculino</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="studentgender2" value="F" required>
-                    <label class="form-check-label" for="studentgender2">F</label>
+                    <label class="form-check-label" for="studentgender2">Feminino</label>
                 </div>
             </div>
         </div>
@@ -50,13 +56,15 @@
             <label for="gradeselect" class="col-sm-2 col-form-label">Classe</label>
             <div class="col-sm-3">
                 <select class="form-control" name="grade" id="gradeselect" required>
-                    @foreach($gradenames as $gradename)
-                        <option value="">{{$gradename}}</option>
+                    @foreach($grades as $grade)
+                        <option value="{{$grade->id }}">{{$grade->name}}</option>
                     @endforeach
                 </select>
             </div>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Matricular</button>
-    </form>
+    </form>    
+    @endempty
+    
 </section>
 @endsection
