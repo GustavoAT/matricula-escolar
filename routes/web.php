@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('presentation');
+Route::view('/', 'presentation');
+Route::view('/login', 'userpage');
+Route::view('/perfildodesenvolvedor', 'devprofile');
+Route::get('/cadastro', function() {
+    return view('graderegister');
 });

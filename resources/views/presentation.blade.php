@@ -4,9 +4,9 @@
 
 @section('navoptions')
 <div class="navbar-nav ml-auto">
-    <a class="nav-link" href="#">Entrar</a>
-    <a class="nav-link" href="#">Classes</a>
-    <a class="nav-link" href="#">Matrícula</a>
+    <a class="nav-link" href="/login">Entrar</a>
+    <a class="nav-link" href="/classes">Classes</a>
+    <a class="nav-link" href="/matricula">Matrícula</a>
 </div>
 @endsection
 
