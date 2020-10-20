@@ -4,9 +4,9 @@
 
 @section('navoptions')
 <div class="navbar-nav ml-auto">
-    <a class="nav-link" href="#">Entrar</a>
-    <a class="nav-link" href="#">Classes</a>
-    <a class="nav-link active" href="#">Matrícula</a>
+    <a class="nav-link" href="/login">Entrar</a>
+    <a class="nav-link" href="/classes">Classes</a>
+    <a class="nav-link active" href="">Matrícula</a>
 </div>
 @endsection
 
@@ -19,7 +19,7 @@
     @endisset
 
     @empty($message)
-    <form action="/students/store" method="POST">
+    <form action="/students" method="POST">
         @csrf
         <div class="form-group row">
             <label for="studentname" class="col-sm-2 col-form-label">Nome completo</label>

@@ -5,6 +5,7 @@
 @section('navoptions')
 <div class="navbar-nav ml-auto">
     <a class="nav-link" href="/perfildodesenvolvedor">Perfil do desenvolvedor</a>
+    <a class="nav-link active" href="">Cadastro</a>
 </div>
 @endsection
 

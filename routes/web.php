@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,14 +21,19 @@ Route::view('/login', 'userpage');
 
 Route::view('/perfildodesenvolvedor', 'devprofile');
 
-Route::resource('classes', GradesController::class)->only([
-    'index', 'create', 'store'
-])->names([
-    'create' => "classes.cadastrar"
-]);
+Route::get('/classes', [GradeController::class, 'index']);
+Route::get('/classes/cadastrar', [GradeController::class, 'create']);
+Route::post('/classes', [GradeController::class, 'store']);
 
-Route::resource('students', StudentController::class)->only([
-    'create', 'store'
-])->names([
-    'create' => "matricula"
-]);
+/* Route::resource('classes', GradeController::class,[
+    'only' => ['index', 'create', 'store'],
+    'names' => ['create' => 'classes/cadastrar']
+]); */
+
+Route::get('/matricula', [StudentController::class, 'create']);
+Route::post('/students', [StudentController::class, 'store']);
+/* Route::resource('students', StudentController::class,[
+    'only' => ['create', 'store'],
+    'names' => ['create' => 'matricula']
+]); */
+
