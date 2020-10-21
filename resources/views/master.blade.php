@@ -9,13 +9,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <!-- Site Style -->
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+
     <title>Escola Newton - @yield('title')</title>
 </head>
 <body>
     @section('header')
     <header class="jumbotron mb-0">
-        <h1 class="display-4">Escola Newton</h1>
-        <p class="lead">Onde sua ação tem uma reação</p>
+        <div class="row">
+            <img id="header-bg" src="https://4.bp.blogspot.com/-08KK6RV14Fo/Wmm3uTFkTVI/AAAAAAAAaUI/PIu1SOLSdbErIGx6xEHj6h7zFK25CxalQCLcBGAs/s1600/Isaac%2BNewton%2B752%2BO%2BBaricentro%2Bda%2Bmente.png" alt="">
+            <div class="pl-2">
+                <h1 class="display-4">Escola Newton</h1>
+                <p class="lead">Onde sua ação tem uma reação</p>
+            </div>
+        </div>
+
     </header>
     @show
 
@@ -42,7 +51,7 @@
             <div class="col-md-4">
                 <strong>Endereço:</strong>
                 <p>
-                    Rua tal tal tal n 2342 bairo cidade BA
+                    Rua Kepler nº 2342. Kensington-BA
                 </p>
             </div>
             <div class="col-md-4">
@@ -54,7 +63,7 @@
             <div class="col-md-4">
                 <strong>E-mail:</strong>
                 <p>
-                    sdakjh@gmail.com
+                    escnewton@gmail.com
                 </p>
             </div>
         </div>
