@@ -16,7 +16,7 @@ class Student extends Model
         'cpf',
         'birthday',
         'gender',
-        'grade',
+        'grade_id',
     ];
 
     /**

@@ -30,7 +30,7 @@
         <div class="form-group row">
             <label for="studentcpf" class="col-sm-2 col-form-label">CPF</label>
             <div class="col-sm-3">
-                <input type="text" name="cpf" class="form-control" id="studentcpf" placeholder="9999999999" pattern="[0-9]{10}" maxlength="10" autocomplete="off" required>
+                <input type="text" name="cpf" class="form-control" id="studentcpf" placeholder="12345678910" pattern="[0-9]{11}" maxlength="11" autocomplete="off" required>
             </div>
         </div>
         <div class="form-group row">
@@ -57,7 +57,7 @@
             <div class="col-sm-3">
                 <select class="form-control" name="grade" id="gradeselect" required>
                     @foreach($grades as $grade)
-                        <option value="{{$grade->id }}">{{$grade->name}}</option>
+                        <option value="{{ $grade->id }}">{{$grade->name}}</option>
                     @endforeach
                 </select>
             </div>

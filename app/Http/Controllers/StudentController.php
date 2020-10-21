@@ -43,14 +43,14 @@ class StudentController extends Controller
                 'cpf' => $request->cpf,
                 'birthday' => $request->birthday,
                 'gender' => $request->gender,
-                'grade' => $request->grade
+                'grade_id' => $request->grade
             ]);
         } catch (\Throwable $th) {
-            return view('graderegister', [
+            return view('studentregister', [
                 'message' => 'Não foi possível cadastrar, erro no banco'
             ]);
         }
-        return view('graderegister', [
+        return view('studentregister', [
             'message' => 'Cadastrado com sucesso '
                 .$student->name
                 .' na classe '
